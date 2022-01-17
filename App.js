@@ -1,19 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput } from "react-native";
 
 export default function App() {
   const [name, setName] = useState("Noah");
   const [age, setAge] = useState(22);
-
-  const [seconds, setSeconds] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSeconds((seconds) => seconds + 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <View style={styles.container}>
@@ -34,7 +24,6 @@ export default function App() {
       <Text>
         name: {name}, age: {age}
       </Text>
-      <Text>{seconds}</Text>
     </View>
   );
 }
